@@ -17,8 +17,9 @@ namespace BEComentarios.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .EnableSensitiveDataLogging()
-                .UseSqlite(_configuration.GetConnectionString("WebApiDatabase"));
+                //.EnableSensitiveDataLogging()
+                //.UseSqlite(_configuration.GetConnectionString("WebApiDatabase"));
+                .UseSqlite(_configuration.GetConnectionString("WebApiInMemoryDatabase"));
         }
     }
 }

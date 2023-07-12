@@ -1,0 +1,6 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@hostname=becomentarios20230711203222.azurewebsites.net/api/comentario
+#@port=44320
+GET https://{{hostname}}/1
+

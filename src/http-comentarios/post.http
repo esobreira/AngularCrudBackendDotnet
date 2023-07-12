@@ -1,0 +1,10 @@
+﻿@hostname=becomentarios20230711203222.azurewebsites.net/api/comentario
+
+POST https://{{hostname}}
+Content-Type: application/json
+
+{
+    "titulo": "Titulo 5",
+    "criador": "Criador 5",
+    "texto": "Texto 5"
+}

@@ -1,4 +1,5 @@
 ﻿using BEComentarios.Domain;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
 namespace BEComentarios.Infrastructure

@@ -1,0 +1,10 @@
+﻿@hostname=becomentarios20230711203222.azurewebsites.net/api/comentario
+
+PUT https://{{hostname}}/1
+Content-Type: application/json
+
+{
+    "titulo": "Titulo 1 alterado",
+    "criador": "Eberton Sobreira",
+    "texto": "Lorem Ipsum et si dolor amet"
+}
