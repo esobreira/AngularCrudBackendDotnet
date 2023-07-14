@@ -3,6 +3,7 @@ using BEComentarios.Domain;
 using BEComentarios.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.IO.IsolatedStorage;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -78,36 +79,19 @@ static void AddComentariosData(WebApplication app)
 
     #endregion
 
-    var comentario1 = new Comentario
+    for (int i = 1; i <= 10; i++)
     {
-        Id = 1,
-        Titulo = "Titulo 1",
-        Texto = "Texto 1",
-        Criador = "Criador 1",
-        DataCriacao = DateTime.Now,
-    };
+        var comentario = new Comentario
+        {
+            Id = i,
+            Titulo = $"Titulo {i}",
+            Texto = $"Texto {i}",
+            Criador = $"Criador {i}",
+            DataCriacao = DateTime.Now,
+        };
 
-    var comentario2 = new Comentario
-    {
-        Id = 2,
-        Titulo = "Titulo 2",
-        Texto = "Texto 2",
-        Criador = "Criador 2",
-        DataCriacao = DateTime.Now,
-    };
-
-    var comentario3 = new Comentario
-    {
-        Id = 3,
-        Titulo = "Titulo 3",
-        Texto = "Texto 3",
-        Criador = "Criador 3",
-        DataCriacao = DateTime.Now,
-    };
-
-    db.Comentarios.Add(comentario1);
-    db.Comentarios.Add(comentario2);
-    db.Comentarios.Add(comentario3);
+        db.Comentarios.Add(comentario);
+    }
 
     db.SaveChanges();
 }
