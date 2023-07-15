@@ -1,11 +1,6 @@
-using BEComentarios;
 using BEComentarios.Domain;
 using BEComentarios.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.IO.IsolatedStorage;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,12 +39,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-if (app.Environment.IsProduction())
-{
-    var port = Environment.GetEnvironmentVariable("PORT");
-    app.Urls.Add($"http://*:{port}");
-    app.Urls.Add($"https://*:{port}");
-}
+//if (app.Environment.IsProduction())
+//{
+//    var port = Environment.GetEnvironmentVariable("PORT");
+//    app.Urls.Add($"http://*:{port}");
+//    app.Urls.Add($"https://*:{port}");
+//}
 
 AddComentariosData(app);
 
