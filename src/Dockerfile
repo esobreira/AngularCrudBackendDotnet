@@ -26,4 +26,5 @@ RUN dotnet publish "BEComentarios.csproj" -c Release -o /app/publish /p:UseAppHo
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "BEComentarios.dll"]
+#ENTRYPOINT ["dotnet", "BEComentarios.dll"]
+CMD ASPNETCORE_URLS="http://*:$PORT" dotnet BEComentarios.dll
